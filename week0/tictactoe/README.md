@@ -4,7 +4,7 @@ This project implements an artificial intelligence that plays Tic-Tac-Toe optima
 
 ## Problem Statement
 
-The full problem statement can be found at: https://cs50.harvard.edu/ai/2024/projects/0/tictactoe/
+The full problem statement can be found at: [Tic-Tac-Toe AI](https://cs50.harvard.edu/ai/2024/projects/0/tictactoe/)
 
 ## Solution Description
 
