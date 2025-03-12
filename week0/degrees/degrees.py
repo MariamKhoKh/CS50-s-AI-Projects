@@ -91,9 +91,51 @@ def shortest_path(source, target):
 
     If no possible path, returns None.
     """
+    # Initialize the frontier with the starting position
+    start = Node(state=source, parent=None, action=None)
+    frontier = QueueFrontier()
+    frontier.add(start)
 
-    # TODO
-    raise NotImplementedError
+    # Initialize an empty explored set
+    explored = set()
+
+    # If source and target are the same, return empty path
+    if source == target:
+        return []
+
+    # Keep looping until solution found or no path exists
+    while not frontier.empty():
+        # Choose a node from the frontier
+        node = frontier.remove()
+
+        # Add the current node to the explored set
+        explored.add(node.state)
+
+        # Find all neighbors of the current person
+        neighbors = neighbors_for_person(node.state)
+
+        # Check each neighbor
+        for movie_id, person_id in neighbors:
+            # If we found the target, we have a solution
+            if person_id == target:
+                # Reconstruct the path
+                path = []
+                # Start from the current node
+                while node.parent is not None:
+                    path.append((node.action, node.state))
+                    node = node.parent
+                # Reverse the path and add the final step
+                path.reverse()
+                path.append((movie_id, person_id))
+                return path
+
+            # If not the target and not already explored, add to frontier
+            if person_id not in explored and not frontier.contains_state(person_id):
+                child = Node(state=person_id, parent=node, action=movie_id)
+                frontier.add(child)
+
+    # If we get here, no path was found
+    return None
 
 
 def person_id_for_name(name):
