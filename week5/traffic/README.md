@@ -1,4 +1,4 @@
-# Traffic Sign Classifier - README
+# Traffic Sign Classifier
 
 ## What the Project Does
 This program looks at pictures of traffic signs and learns to tell which sign is which. It uses machine learning (a type of AI) to look at lots of example images and then guesses the correct sign when it sees a new one.
