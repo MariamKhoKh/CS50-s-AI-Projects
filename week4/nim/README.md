@@ -1,4 +1,4 @@
-# Nim Game AI
+# Nim AI
 
 ## What is Nim?
 Nim is a simple game where:
