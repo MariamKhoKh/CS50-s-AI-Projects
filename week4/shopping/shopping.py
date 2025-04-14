@@ -13,7 +13,7 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python shopping.py data")
 
-    # Load data from spreadsheet and split into train and test sets
+    # Load data from spreadsheet and split into train and test.py sets
     evidence, labels = load_data(sys.argv[1])
     X_train, X_test, y_train, y_test = train_test_split(
         evidence, labels, test_size=TEST_SIZE
